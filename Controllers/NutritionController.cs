@@ -25,6 +25,18 @@ namespace GeosMacros.Controllers
                           Problem("Entity set 'Context.Nutrition'  is null.");
         }
 
+         // GET: Nutrition
+        public async Task<IActionResult> Macros()
+        {
+
+            // Macros only shows items with Today as true
+            var nutrition = await _context.Nutrition.Where(x => x.Today == true).ToListAsync();
+
+              return _context.Nutrition != null ? 
+                            View(nutrition) :
+                            Problem("Entity set 'Context.Nutrition'  is null.");
+        }
+
         // GET: Nutrition/Details/5
         public async Task<IActionResult> Details(int? id)
         {
