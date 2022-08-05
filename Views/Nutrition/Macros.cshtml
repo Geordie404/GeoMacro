@@ -3,9 +3,7 @@
 @{
     ViewData["Title"] = "Macros";
 }
-
 <h1>Today's Totals</h1>
-
 <table class="table">
     <thead>
         <tr>
@@ -69,6 +67,55 @@
 }
     </tbody>
 </table>
-@* <a asp-action="Macros">Calculate Daily Macros</a> *@
-<a asp-action="Index">Back to Index</a>
+
+
+<a>Calories: <a id="cal">0</a>kcals  |  Proteins: <a id="pro">0</a>g  |  Carbs: <a id="car">0</a>g  |  Fats: <a id="fat">0</a>g<a>
+
+<script type="text/javascript">
+
+    @* var Macros = JSON.parse(model); //For javascript object *@
+    @* console.log(@Model); *@
+    var data = @Html.Raw(Json.Serialize(@Model));
+    @* var protien =  *@
+
+    function cals(){
+    let sum = 0;
+       for (let i = 0; i < data.length; i++) {
+    sum += (data[i].calories * data[i].quantity);
+    }
+    return sum;
+    }
+
+    function prot(){
+    let sum = 0;
+       for (let i = 0; i < data.length; i++) {
+    sum += (data[i].proteins * data[i].quantity);
+    }
+    return sum;
+    }
+
+    function carb(){
+    let sum = 0;
+       for (let i = 0; i < data.length; i++) {
+    sum += (data[i].carbohydrates * data[i].quantity);
+    }
+    return sum;
+    }
+
+    function fats(){
+    let sum = 0;
+       for (let i = 0; i < data.length; i++) {
+    sum += (data[i].fats * data[i].quantity);
+    }
+    return sum;
+    }
+
+    document.getElementById("cal").innerHTML = cals();
+    document.getElementById("pro").innerHTML = prot();
+    document.getElementById("car").innerHTML = carb();
+    document.getElementById("fat").innerHTML = fats();
+</script>
+
+<br><br><a asp-action="Index">Back to Index</a>
+
 

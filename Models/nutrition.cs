@@ -14,20 +14,14 @@ public class Nutrition
     public int Proteins { get; set; }
     public int Carbohydrates { get; set; }
     public int Fats { get; set; }
-    public int Quantity { get; set; }
+    public double Quantity { get; set; }
     public bool Today { get; set; }
 
     public string? _totals;
     public string Totals => _totals ??= GetTotalsString();
 
     public string GetTotalsString(){
-
-        double totalcals = Calories * Quantity;
-        double totalprot = Proteins * Quantity;
-        double totalcarb = Carbohydrates * Quantity;
-        double totalfats = Fats * Quantity;
-
-        _totals = $"{totalcals} Calories {totalprot} Protein {totalcarb} Carbs {totalfats} Fat";
+        _totals = $"{Calories} Calories {Proteins} Protein {Carbohydrates} Carbs {Fats} Fat";
         return _totals;
     }
 }
