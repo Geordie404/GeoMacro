@@ -280,3 +280,5 @@
 /Users/geordie/Desktop/Code/Geordie404/mvc/GeosMacros/obj/Debug/net6.0/GeosMacros.pdb
 /Users/geordie/Desktop/Code/Geordie404/mvc/GeosMacros/obj/Debug/net6.0/GeosMacros.genruntimeconfig.cache
 /Users/geordie/Desktop/Code/Geordie404/mvc/GeosMacros/obj/Debug/net6.0/ref/GeosMacros.dll
+/Users/geordie/Desktop/Code/Geordie404/mvc/GeosMacros/bin/Debug/net6.0/Auth0.AspNetCore.Authentication.dll
+/Users/geordie/Desktop/Code/Geordie404/mvc/GeosMacros/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll

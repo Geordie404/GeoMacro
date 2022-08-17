@@ -3,5 +3,16 @@
 }
 
 <div class="text-center">
-     <a class="navbar-brand" asp-area="" asp-controller="Nutrition" asp-action="Index"><h1 class="display-4">Geordies Macros</h1></a>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a class="navbar-brand" asp-area="" asp-controller="Nutrition" asp-action="Index"><h1 class="display-4">Geordies Macros</h1></a>
+    } else {
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-dark display-6" asp-area="" 
+             asp-controller="Account" 
+             asp-action="Login">Login</a>
+        </li>
+      </ul>
+      }
 </div>
