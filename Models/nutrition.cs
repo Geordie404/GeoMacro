@@ -17,6 +17,15 @@ public class Nutrition
     public double Quantity { get; set; }
     public bool Today { get; set; }
 
+    public string? _date;
+    public string Date => _date ??= GetDate();
+
+    public string GetDate(){
+        _date = DateTime.Now.ToString("d");
+        return _date;
+    }
+
+
     public string? _totals;
     public string Totals => _totals ??= GetTotalsString();
 
@@ -24,4 +33,13 @@ public class Nutrition
         _totals = $"{Calories} Calories {Proteins} Protein {Carbohydrates} Carbs {Fats} Fat";
         return _totals;
     }
+
+    public string? _log;
+    public string Log => _log ??= GetLog();
+
+    public string GetLog(){
+        _log = $"{Date} | {Item} | {Totals}";
+        return _log;
+    }
+
 }
